@@ -40,7 +40,7 @@ const CONFIG = {
     time: "13:50",
     venue: "아이티컨벤션",
     hall: "그레이스홀",
-    address: "경기도 용인시 기흥구 흥덕1로 13 (영덕동 1005) /n 흥덕IT밸리 A동 (Tower) 2층",
+    address: "경기도 용인시 기흥구 흥덕1로 13 (영덕동 1005) \n 흥덕IT밸리 A동 (Tower) 2층",
     tel: "031-255-7000",
     mapLinks: {
       kakao: "https://place.map.kakao.com/22839256",
