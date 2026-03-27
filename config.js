@@ -40,7 +40,7 @@ const CONFIG = {
     time: "13:50",
     venue: "아이티컨벤션",
     hall: "그레이스홀",
-    address: "경기도 용인시 기흥구 흥덕1로 13 (영덕동 1005) \n\n흥덕IT밸리 A동 (Tower) 2층",
+    address: "경기도 용인시 기흥구 흥덕1로 13 (영덕동 1005) 흥덕IT밸리 A동 (Tower) 2층",
     tel: "031-255-7000",
     mapLinks: {
       kakao: "https://place.map.kakao.com/22839256",
@@ -57,7 +57,7 @@ const CONFIG = {
   // ── 우리의 이야기 ──
   story: {
     title: "우리의 이야기",
-    content: "서로 다른 길을 걷던 두 사람이\n하나의 길을 함께 걷게 되었습니다.\n\n여러분을 소중한 자리에 초대합니다."
+    content: "스쳐지나갈 줄 알았던 우연들이 겹처 \n서로에게 단 하나뿐인 인연이 되고자 합니다.\n\n여러분을 소중한 자리에 초대합니다."
   },
 
   // ── 오시는 길 ──
@@ -66,12 +66,12 @@ const CONFIG = {
   // ── 마음 전하실 곳 ──
   accounts: {
     groom: [
-      { role: "신랑", name: "허준영", bank: "국민은행", number: "000-000-000000" },
+      { role: "신랑", name: "허준영", bank: "기업은행", number: "000-000-000000" },
       { role: "아버지", name: "허윤선", bank: "신한은행", number: "000-000-000000" },
       { role: "어머니", name: "임성옥", bank: "우리은행", number: "000-000-000000" }
     ],
     bride: [
-      { role: "신부", name: "최인비", bank: "카카오뱅크", number: "000-000-000000" },
+      { role: "신부", name: "최인비", bank: "카카오뱅크", number: "3333-13-8415678" },
       { role: "아버지", name: "최장헌", bank: "우리은행", number: "000-000-000000" },
       { role: "어머니", name: "한진숙", bank: "우리은행", number: "000-000-000000" }
     ]
