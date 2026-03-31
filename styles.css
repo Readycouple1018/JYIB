@@ -5,22 +5,28 @@
 
 /* ─── CSS Variables ─── */
 :root {
-  --color-bg: #faf8f5;
-  --color-bg-warm: #f5f0ea;
+  --color-bg: #fdfbf8;
+  --color-bg-warm: #f8f4f0;
   --color-bg-card: #ffffff;
-  --color-text: #3a3228;
-  --color-text-light: #7a7068;
-  --color-text-muted: #a09890;
+
+  --color-text: #3e3e3e;
+  --color-text-light: #5f5f5f;
+  --color-text-muted: #9e9e9e;
+
   --color-accent: #b8956a;
   --color-accent-light: #d4b896;
   --color-accent-dark: #96764e;
-  --color-border: #e8e0d8;
-  --color-divider: #d8cfc5;
-  --color-overlay: rgba(58, 50, 40, 0.6);
+
+  --color-border: #ece4f0;
+  --color-divider: #e0d8e6;
+
+  --color-overlay: rgba(74,74,74,0.55);
+
   --color-kakao: #fee500;
   --color-naver: #03c75a;
+
   --color-white: #ffffff;
-  --color-toast-bg: rgba(58, 50, 40, 0.9);
+  --color-toast-bg: rgba(74,74,74,0.88);
 
   --font-serif: 'Noto Serif KR', 'Georgia', serif;
   --font-display: 'Cormorant Garamond', 'Noto Serif KR', serif;
@@ -393,20 +399,18 @@ a {
   justify-content: flex-end;
   padding: 0;
   overflow: hidden;
-  background-color: #3a3228;
+  background-color:var(--color-bg);
 }
 
-.hero__overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to bottom,
-    transparent 0%,
-    transparent 40%,
-    rgba(58, 50, 40, 0.3) 60%,
-    rgba(58, 50, 40, 0.75) 85%,
-    rgba(58, 50, 40, 0.9) 100%
-  );
+.hero__overlay{
+background:linear-gradient(
+to bottom,
+transparent 0%,
+transparent 35%,
+rgba(253,251,248,0.2) 55%,
+rgba(253,251,248,0.6) 75%,
+rgba(253,251,248,0.92) 100%
+);
   z-index: 1;
 }
 
@@ -423,7 +427,7 @@ a {
   position: relative;
   z-index: 2;
   text-align: center;
-  color: var(--color-white);
+  ccolor:var(--color-text);
   padding: 0 var(--spacing-md) var(--spacing-lg);
   width: 100%;
 }
@@ -644,10 +648,14 @@ a {
 }
 
 .calendar__day.is-today {
-  font-weight: 700;
-  color: #fff;
-  background: var(--color-accent);
-  border-radius: 50%;
+  font-weight:700;
+  color:#fff;
+  background:linear-gradient(
+  135deg,
+  var(--color-accent-light),
+  var(--color-accent)
+  );
+  border-radius:50%;
 }
 
 .calendar-actions {
@@ -933,10 +941,10 @@ a {
   line-height: 1;
 }
 
-.btn--outline {
-  border: 1px solid var(--color-border);
-  color: var(--color-text-light);
-  background: var(--color-bg-card);
+.btn--outline:hover{
+border-color:var(--color-accent);
+color:var(--color-accent-dark);
+background:rgba(232,223,240,0.2);
 }
 
 .btn--outline:hover {
