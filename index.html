@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
@@ -139,6 +140,8 @@
       </div>
     </section>
 
+
+
     <!-- ─── Location Section ─── -->
     <section class="section location" id="location">
       <div class="section__inner">
@@ -194,6 +197,31 @@
         </div>
       </div>
     </section>
+
+<!-- ─── Share Section ─── -->
+<section class="section share" id="share">
+  <div class="section__inner">
+
+    <h2 class="section__title animate-item" data-animate="fade-up">
+      공유하기
+    </h2>
+
+    <div class="share__grid animate-item" data-animate="fade-up">
+
+      <button class="share__btn share__link" id="shareLink">
+        <span class="share__icon">🔗</span>
+        <span>링크복사</span>
+      </button>
+
+      <button class="share__btn share__sms" id="shareSMS">
+        <span class="share__icon">✉️</span>
+        <span>문자공유</span>
+      </button>
+
+    </div>
+
+  </div>
+</section>
 
     <!-- ─── Footer ─── -->
     <footer class="footer">
