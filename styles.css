@@ -1188,8 +1188,20 @@ background:rgba(232,223,240,0.2);
 .share-grid{
   display:flex;
   justify-content:center;
-  gap:14px;
+  gap:32px;
   margin-top:24px;
+}
+
+/* 문자 */
+.share-card.sms{
+  background:#e7e7e7;
+}
+
+/* 추가 */
+.share__grid{
+  display:flex;
+  justify-content:center;
+  gap:32px;
 }
 
 .share-card{
@@ -1199,7 +1211,7 @@ background:rgba(232,223,240,0.2);
   justify-content:center;
 
   width:100px;
-  height:10px;
+  height:50px;
 
   border-radius:20px;
   border:none;
