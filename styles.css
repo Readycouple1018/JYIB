@@ -136,7 +136,7 @@ a {
   top: 0;
   width: 50%;
   height: 100%;
-  background: linear-gradient(180deg, #FFE4E1 0%, #BC8F8F 50%, #FFE4E1 100%);
+  background: linear-gradient(180deg, #FFE4E1 0%, #BC8F8F 45%, #BC8F8F 55%, #FFE4E1 100%);
   transition: transform 1.2s cubic-bezier(0.77, 0, 0.18, 1), opacity 1.2s ease;
   will-change: transform, opacity;
 }
