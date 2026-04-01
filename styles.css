@@ -15,7 +15,7 @@
 
   --color-accent: #BC8F8F;
   --color-accent-light: #FFE4E1;
-  --color-accent-dark: #708090;
+  --color-accent-dark: #BC8F8F;
 
   --color-border: #ece4f0;
   --color-divider: #e0d8e6;
@@ -407,15 +407,16 @@ a {
   background-color:var(--color-bg);
 }
 
-.hero__overlay{
-background:linear-gradient(
-to bottom,
-transparent 0%,
-transparent 35%,
-rgba(253,251,248,0.2) 55%,
-rgba(253,251,248,0.6) 75%,
-rgba(253,251,248,0.92) 100%
-);
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(255,255,255,0.2) 40%,
+    rgba(255,255,255,0.6) 70%,
+    rgba(255,255,255,0.9) 100%
+  );
   z-index: 1;
 }
 
@@ -435,7 +436,7 @@ rgba(253,251,248,0.92) 100%
   position: relative;
   z-index: 2;
   text-align: center;
-  color:var(--color-text);
+  color: #708090
   padding: 0 var(--spacing-md) var(--spacing-lg);
   width: 100%;
 }
@@ -490,7 +491,7 @@ rgba(253,251,248,0.92) 100%
   z-index: 2;
   padding: var(--spacing-lg) var(--spacing-md) calc(var(--spacing-lg) + var(--safe-bottom));
   text-align: center;
-  color: var(--color-white);
+  color: #BC8F8F;
 }
 
 .countdown__label {
