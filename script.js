@@ -737,3 +737,40 @@
     init();
   }
 })();
+
+/* =========================
+   Share Functions
+========================= */
+
+
+// 링크 복사
+const linkBtn = document.getElementById("shareLink");
+
+if (linkBtn) {
+  linkBtn.onclick = function () {
+
+    navigator.clipboard.writeText(window.location.href);
+
+    alert("청첩장 링크가 복사되었습니다.");
+
+  };
+}
+
+
+// 문자 공유
+const smsBtn = document.getElementById("shareSMS");
+
+if (smsBtn) {
+  smsBtn.onclick = function () {
+
+    const text =
+      document.title +
+      " " +
+      window.location.href;
+
+    window.location.href =
+      "sms:?body=" +
+      encodeURIComponent(text);
+
+  };
+}
