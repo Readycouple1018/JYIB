@@ -473,26 +473,47 @@
   let touchEndY = 0;
 
   function openPhotoModal(images, index) {
-    modalImages = images;
-    modalIndex = index;
-    showModalImage();
-    $('#photoModal').classList.add('is-open');
-    document.body.classList.add('no-scroll');
-  }
+
+  scrollPosition = window.scrollY; // ⭐ 현재 위치 저장
+
+  modalImages = images;
+  modalIndex = index;
+  showModalImage();
+
+  $('#photoModal').classList.add('is-open');
+
+  document.body.style.top = `-${scrollPosition}px`; // ⭐ 위치 고정
+  document.body.classList.add('no-scroll');
+}
 
   function closePhotoModal() {
-    $('#photoModal').classList.remove('is-open');
-    document.body.classList.remove('no-scroll');
-  }
 
-  function showModalImage() {
-    const img = $('#modalImg');
+  $('#photoModal').classList.remove('is-open');
+
+  document.body.classList.remove('no-scroll');
+  document.body.style.top = "";
+
+  window.scrollTo(0, scrollPosition); // ⭐ 원래 위치 복귀
+}
+
+function showModalImage() {
+
+  const img = $('#modalImg');
+
+  img.style.opacity = 0;
+
+  setTimeout(() => {
+
     img.src = modalImages[modalIndex];
+
     $('#modalCounter').textContent = `${modalIndex + 1} / ${modalImages.length}`;
 
     $('#modalPrev').style.display = modalIndex > 0 ? '' : 'none';
     $('#modalNext').style.display = modalIndex < modalImages.length - 1 ? '' : 'none';
-  }
+
+    img.style.opacity = 1;
+
+  },150);
 
   function modalNavigate(dir) {
     const newIndex = modalIndex + dir;
