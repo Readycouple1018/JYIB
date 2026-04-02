@@ -481,6 +481,12 @@ a {
   line-height: 1.4;
 }
 
+.hero__names,
+.hero__date,
+.hero__venue{
+  text-shadow: 0 2px 8px rgba(0,0,0,0.35);
+}
+
 .hero__divider {
   width: 40px;
   height: 1px;
