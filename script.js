@@ -497,7 +497,7 @@
   window.scrollTo(0, scrollPosition); // ⭐ 원래 위치로 복귀
 }
 
-  function showModalImage(direction = 0) {
+function showModalImage(direction = 0) {
 
   const img = $('#modalImg');
 
@@ -524,15 +524,26 @@
   $('#modalNext').style.display =
     modalIndex < modalImages.length - 1 ? '' : 'none';
 }
-  function modalNavigate(dir) {
+  function showModalImage(direction = 0) {
 
-  const newIndex = modalIndex + dir;
+  const img = document.getElementById("modalImg");
 
-  if (newIndex < 0 || newIndex >= modalImages.length) return;
+  img.classList.remove("slide-in-left","slide-in-right");
 
-  modalIndex = newIndex;
+  void img.offsetWidth;
 
-  showModalImage(dir);
+  if(direction === 1){
+    img.classList.add("slide-in-right");
+  }
+
+  if(direction === -1){
+    img.classList.add("slide-in-left");
+  }
+
+  img.src = modalImages[modalIndex];
+
+  document.getElementById("modalCounter").textContent =
+    `${modalIndex + 1} / ${modalImages.length}`;
 }
 
   function initPhotoModal() {
