@@ -340,6 +340,37 @@ a {
   max-height: 100%;
   object-fit: contain;
   transition: transform 0.3s ease;
+   /* 갤러리 슬라이드 애니메이션 */
+
+.slide-in-right{
+  animation: slideRight .35s ease;
+}
+
+.slide-in-left{
+  animation: slideLeft .35s ease;
+}
+
+@keyframes slideRight{
+  from{
+    transform: translateX(40px);
+    opacity:0;
+  }
+  to{
+    transform: translateX(0);
+    opacity:1;
+  }
+}
+
+@keyframes slideLeft{
+  from{
+    transform: translateX(-40px);
+    opacity:0;
+  }
+  to{
+    transform: translateX(0);
+    opacity:1;
+  }
+}
 }
 
 .photo-modal__counter {
