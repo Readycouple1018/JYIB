@@ -84,7 +84,6 @@ body.no-scroll {
   overflow: hidden;
   position: fixed;
   width: 100%;
-  top: var(--scroll-y, 0);
 }
 
 img {
@@ -343,14 +342,6 @@ a {
   object-fit: contain;
   transition: transform 0.3s ease;
    /* 갤러리 슬라이드 애니메이션 */
-
-.slide-in-right{
-  animation: slideRight .35s ease;
-}
-
-.slide-in-left{
-  animation: slideLeft .35s ease;
-}
 
 @keyframes slideRight{
   from{
@@ -780,6 +771,36 @@ a {
 
 .gallery__item:hover img {
   transform: scale(1.08);
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(60px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-60px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.slide-in-right {
+  animation: slideInRight 0.35s ease;
+}
+
+.slide-in-left {
+  animation: slideInLeft 0.35s ease;
 }
 
 /* ═══════════════════════════════════════════
