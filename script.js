@@ -204,7 +204,7 @@
         ctx.translate(this.x, this.y);
         ctx.rotate(this.rotation);
         ctx.globalAlpha = this.opacity;
-        ctx.fillStyle = '#e8c8b0';
+        ctx.fillStyle = '#FFE4E1';
         ctx.beginPath();
         // Petal shape
         ctx.moveTo(0, 0);
