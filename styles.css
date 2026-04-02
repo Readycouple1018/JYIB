@@ -437,7 +437,7 @@ a {
   position: relative;
   z-index: 2;
   text-align: center;
-  color: #708090
+  color: #708090;
   padding: 0 var(--spacing-md) var(--spacing-lg);
   width: 100%;
 }
