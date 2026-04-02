@@ -177,19 +177,23 @@
       }
 
       reset(initial = false) {
-        this.x = Math.random() * width;
-        this.y = initial ? Math.random() * height * -1 : -20;
-        this.size = 8 + Math.random() * 10;
-        this.speedY = 0.5 + Math.random() * 1;
-        this.speedX = -0.3 + Math.random() * 0.6;
-        this.rotation = Math.random() * Math.PI * 2;
-        this.rotSpeed = (Math.random() - 0.5) * 0.02;
-        this.oscillateAmp = 20 + Math.random() * 30;
-        this.oscillateSpeed = 0.01 + Math.random() * 0.02;
-        this.oscillateOffset = Math.random() * Math.PI * 2;
-        this.opacity = 0.2 + Math.random() * 0.4;
-        this.t = 0;
-      }
+  this.x = Math.random() * width;
+  this.y = initial ? Math.random() * height * -1 : -20;
+
+  const colors = ['#ffd1dc','#f8c8dc','#ffe4e1'];
+  this.color = colors[Math.floor(Math.random()*colors.length)];
+
+  this.size = 8 + Math.random() * 10;
+  this.speedY = 0.5 + Math.random() * 1;
+  this.speedX = -0.3 + Math.random() * 0.6;
+  this.rotation = Math.random() * Math.PI * 2;
+  this.rotSpeed = (Math.random() - 0.5) * 0.02;
+  this.oscillateAmp = 20 + Math.random() * 30;
+  this.oscillateSpeed = 0.01 + Math.random() * 0.02;
+  this.oscillateOffset = Math.random() * Math.PI * 2;
+  this.opacity = 0.2 + Math.random() * 0.4;
+  this.t = 0;
+}
 
       update() {
         this.t++;
@@ -204,7 +208,9 @@
         ctx.translate(this.x, this.y);
         ctx.rotate(this.rotation);
         ctx.globalAlpha = this.opacity;
-        ctx.fillStyle = '#FFE4E1';
+
+        ctx.fillStyle = this.color;
+
         ctx.beginPath();
         // Petal shape
         ctx.moveTo(0, 0);
