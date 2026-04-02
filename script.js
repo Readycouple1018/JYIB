@@ -461,23 +461,21 @@
     });
   }
 
-  /* ═══════════════════════════════════════════
-     Photo Modal (with swipe)
-     ═══════════════════════════════════════════ */
+ /* ═══════════════════════════════════════════
+   Photo Modal (with swipe)
+   ═══════════════════════════════════════════ */
 
-  let modalImages = [];
-  let modalIndex = 0;
-  let scrollPosition = 0;
-  let touchStartX = 0;
-  let touchEndX = 0;
-  let touchStartY = 0;
-  let touchEndY = 0;
-  let startX = 0;
-  let currentX = 0;
+let modalImages = [];
+let modalIndex = 0;
+let touchStartX = 0;
+let touchEndX = 0;
+let touchStartY = 0;
+let touchEndY = 0;
+let scrollPosition = 0;
 
-  function openPhotoModal(images, index) {
+function openPhotoModal(images, index) {
 
-  scrollPosition = window.scrollY; // ⭐ 현재 위치 저장
+  scrollPosition = window.scrollY;
 
   modalImages = images;
   modalIndex = index;
@@ -485,18 +483,18 @@
 
   $('#photoModal').classList.add('is-open');
 
-  document.body.style.top = `-${scrollPosition}px`; // ⭐ 위치 고정
+  document.body.style.top = `-${scrollPosition}px`;
   document.body.classList.add('no-scroll');
 }
 
-  function closePhotoModal() {
+function closePhotoModal() {
 
   $('#photoModal').classList.remove('is-open');
 
   document.body.classList.remove('no-scroll');
   document.body.style.top = "";
 
-  window.scrollTo(0, scrollPosition); // ⭐ 원래 위치 복귀
+  window.scrollTo(0, scrollPosition);
 }
 
 function showModalImage() {
@@ -509,71 +507,96 @@ function showModalImage() {
 
     img.src = modalImages[modalIndex];
 
-    $('#modalCounter').textContent = `${modalIndex + 1} / ${modalImages.length}`;
+    $('#modalCounter').textContent =
+      `${modalIndex + 1} / ${modalImages.length}`;
 
-    $('#modalPrev').style.display = modalIndex > 0 ? '' : 'none';
-    $('#modalNext').style.display = modalIndex < modalImages.length - 1 ? '' : 'none';
+    $('#modalPrev').style.display =
+      modalIndex > 0 ? '' : 'none';
+
+    $('#modalNext').style.display =
+      modalIndex < modalImages.length - 1 ? '' : 'none';
 
     img.style.opacity = 1;
 
-  },150);
+  }, 150);
+}
 
-  function modalNavigate(dir) {
-    const newIndex = modalIndex + dir;
-    if (newIndex >= 0 && newIndex < modalImages.length) {
-      modalIndex = newIndex;
-      showModalImage();
+function modalNavigate(dir) {
+
+  const newIndex = modalIndex + dir;
+
+  if (newIndex >= 0 && newIndex < modalImages.length) {
+    modalIndex = newIndex;
+    showModalImage();
+  }
+}
+
+function initPhotoModal() {
+
+  $('#modalClose').addEventListener('click', closePhotoModal);
+
+  $('#modalPrev').addEventListener('click', () => modalNavigate(-1));
+
+  $('#modalNext').addEventListener('click', () => modalNavigate(1));
+
+  const modal = $('#photoModal');
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal || e.target.id === 'modalContainer') {
+      closePhotoModal();
     }
+  });
+
+  document.addEventListener('keydown', (e) => {
+
+    if (!modal.classList.contains('is-open')) return;
+
+    if (e.key === 'Escape') closePhotoModal();
+
+    if (e.key === 'ArrowLeft') modalNavigate(-1);
+
+    if (e.key === 'ArrowRight') modalNavigate(1);
+  });
+
+  const container = $('#modalContainer');
+
+  container.addEventListener('touchstart', (e) => {
+
+    touchStartX = e.changedTouches[0].screenX;
+    touchStartY = e.changedTouches[0].screenY;
+
+  }, { passive: true });
+
+  container.addEventListener('touchend', (e) => {
+
+    touchEndX = e.changedTouches[0].screenX;
+    touchEndY = e.changedTouches[0].screenY;
+
+    handleSwipe();
+
+  }, { passive: true });
+}
+
+function handleSwipe() {
+
+  const diffX = touchStartX - touchEndX;
+  const diffY = touchStartY - touchEndY;
+
+  const minSwipe = 50;
+
+  if (Math.abs(diffX) < minSwipe ||
+      Math.abs(diffX) < Math.abs(diffY)) return;
+
+  if (diffX > 0) {
+
+    modalNavigate(1);
+
+  } else {
+
+    modalNavigate(-1);
+
   }
-
-  function initPhotoModal() {
-    $('#modalClose').addEventListener('click', closePhotoModal);
-    $('#modalPrev').addEventListener('click', () => modalNavigate(-1));
-    $('#modalNext').addEventListener('click', () => modalNavigate(1));
-
-    const modal = $('#photoModal');
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal || e.target.id === 'modalContainer') {
-        closePhotoModal();
-      }
-    });
-
-    // Keyboard navigation
-    document.addEventListener('keydown', (e) => {
-      if (!modal.classList.contains('is-open')) return;
-      if (e.key === 'Escape') closePhotoModal();
-      if (e.key === 'ArrowLeft') modalNavigate(-1);
-      if (e.key === 'ArrowRight') modalNavigate(1);
-    });
-
-    // Swipe support
-    const container = $('#modalContainer');
-
-    container.addEventListener('touchstart', (e) => {
-      touchStartX = e.changedTouches[0].screenX;
-      touchStartY = e.changedTouches[0].screenY;
-    }, { passive: true });
-
-    container.addEventListener('touchend', (e) => {
-      touchEndX = e.changedTouches[0].screenX;
-      touchEndY = e.changedTouches[0].screenY;
-      handleSwipe();
-    }, { passive: true });
-  }
-
-  function handleSwipe() {
-    const diffX = touchStartX - touchEndX;
-    const diffY = touchStartY - touchEndY;
-    const minSwipe = 50;
-
-    if (Math.abs(diffX) < minSwipe || Math.abs(diffX) < Math.abs(diffY)) return;
-
-    if (diffX > 0) {
-      modalNavigate(1); // swipe left -> next
-    } else {
-      modalNavigate(-1); // swipe right -> prev
-    }
-  }
+}
 
   /* ═══════════════════════════════════════════
      Location Section
@@ -797,34 +820,4 @@ if (smsBtn) {
       encodeURIComponent(text);
 
   };
-}
-
-const modalContainer = document.querySelector('.photo-modal__container');
-
-if (modalContainer) {
-
-  modalContainer.addEventListener('touchstart', (e) => {
-    startX = e.touches[0].clientX;
-  });
-
-  modalContainer.addEventListener('touchmove', (e) => {
-    currentX = e.touches[0].clientX;
-  });
-
-  modalContainer.addEventListener('touchend', () => {
-
-    const diff = startX - currentX;
-
-    if (Math.abs(diff) > 50) {
-
-      if (diff > 0) {
-        nextPhoto();
-      } else {
-        prevPhoto();
-      }
-
-    }
-
-  });
-
 }
