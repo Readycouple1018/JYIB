@@ -467,6 +467,7 @@
 
   let modalImages = [];
   let modalIndex = 0;
+  let scrollPosition = 0;
   let touchStartX = 0;
   let touchEndX = 0;
   let touchStartY = 0;
@@ -800,26 +801,30 @@ if (smsBtn) {
 
 const modalContainer = document.querySelector('.photo-modal__container');
 
-modalContainer.addEventListener('touchstart', (e) => {
-  startX = e.touches[0].clientX;
-});
+if (modalContainer) {
 
-modalContainer.addEventListener('touchmove', (e) => {
-  currentX = e.touches[0].clientX;
-});
+  modalContainer.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
+  });
 
-modalContainer.addEventListener('touchend', () => {
+  modalContainer.addEventListener('touchmove', (e) => {
+    currentX = e.touches[0].clientX;
+  });
 
-  const diff = startX - currentX;
+  modalContainer.addEventListener('touchend', () => {
 
-  if (Math.abs(diff) > 50) {
+    const diff = startX - currentX;
 
-    if (diff > 0) {
-      nextPhoto(); // 왼쪽 스와이프 → 다음 사진
-    } else {
-      prevPhoto(); // 오른쪽 스와이프 → 이전 사진
+    if (Math.abs(diff) > 50) {
+
+      if (diff > 0) {
+        nextPhoto();
+      } else {
+        prevPhoto();
+      }
+
     }
 
-  }
+  });
 
-});
+}
