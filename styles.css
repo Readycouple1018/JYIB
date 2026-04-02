@@ -82,7 +82,9 @@ body {
 
 body.no-scroll {
   overflow: hidden;
+  position: fixed;
   width: 100%;
+  top: var(--scroll-y, 0);
 }
 
 img {
