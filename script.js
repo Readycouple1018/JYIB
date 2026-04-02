@@ -471,6 +471,8 @@
   let touchEndX = 0;
   let touchStartY = 0;
   let touchEndY = 0;
+  let startX = 0;
+  let currentX = 0;
 
   function openPhotoModal(images, index) {
 
@@ -795,3 +797,29 @@ if (smsBtn) {
 
   };
 }
+
+const modalContainer = document.querySelector('.photo-modal__container');
+
+modalContainer.addEventListener('touchstart', (e) => {
+  startX = e.touches[0].clientX;
+});
+
+modalContainer.addEventListener('touchmove', (e) => {
+  currentX = e.touches[0].clientX;
+});
+
+modalContainer.addEventListener('touchend', () => {
+
+  const diff = startX - currentX;
+
+  if (Math.abs(diff) > 50) {
+
+    if (diff > 0) {
+      nextPhoto(); // 왼쪽 스와이프 → 다음 사진
+    } else {
+      prevPhoto(); // 오른쪽 스와이프 → 이전 사진
+    }
+
+  }
+
+});
