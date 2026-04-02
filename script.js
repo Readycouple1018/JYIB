@@ -524,28 +524,19 @@ function showModalImage(direction = 0) {
   $('#modalNext').style.display =
     modalIndex < modalImages.length - 1 ? '' : 'none';
 }
-  function showModalImage(direction = 0) {
 
-  const img = document.getElementById("modalImg");
+function modalNavigate(direction){
 
-  img.classList.remove("slide-in-left","slide-in-right");
+  const nextIndex = modalIndex + direction;
 
-  void img.offsetWidth;
+  if(nextIndex < 0 || nextIndex >= modalImages.length) return;
 
-  if(direction === 1){
-    img.classList.add("slide-in-right");
-  }
+  modalIndex = nextIndex;
 
-  if(direction === -1){
-    img.classList.add("slide-in-left");
-  }
+  showModalImage(direction);
 
-  img.src = modalImages[modalIndex];
-
-  document.getElementById("modalCounter").textContent =
-    `${modalIndex + 1} / ${modalImages.length}`;
 }
-
+  
   function initPhotoModal() {
     $('#modalClose').addEventListener('click', closePhotoModal);
     $('#modalPrev').addEventListener('click', () => modalNavigate(-1));
