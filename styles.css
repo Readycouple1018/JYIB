@@ -430,12 +430,19 @@ a {
   background-color:var(--color-bg);
 }
 
+.hero img {
+  filter: brightness(0.85);
+}
+
 .hero__overlay {
+  position: absolute;
+  inset: 0;
+
   background: linear-gradient(
     to bottom,
     rgba(0,0,0,0.25) 0%,
-    rgba(0,0,0,0.35) 35%,
-    rgba(243,242,239,0.7) 50%,
+    rgba(243,242,239,0) 70%,
+    rgba(243,242,239,0.7) 80%,
     rgba(243,242,239,0.95) 100%
   );
   z-index: 1;
