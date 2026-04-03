@@ -431,7 +431,7 @@ a {
 }
 
 .hero img {
-  filter: brightness(1);
+  filter: brightness(0.95);
 }
 
 .hero__overlay {
