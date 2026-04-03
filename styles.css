@@ -430,6 +430,10 @@ a {
   background-color:var(--color-bg);
 }
 
+.hero img {
+  filter: brightness(1);
+}
+
 .hero__overlay {
   position: absolute;
   inset: 0;
