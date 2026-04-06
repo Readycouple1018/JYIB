@@ -461,7 +461,7 @@
       const div = document.createElement('div');
       div.className = 'gallery__item animate-item';
       div.setAttribute('data-animate', 'scale-in');
-      div.innerHTML = `<img src="${src}" alt="갤러리 사진 ${i + 1}" loading="lazy">`;
+      div.innerHTML = `<img src="${src}" alt="갤러리 사진 ${i + 1}" loading="lazy" decoding="async">`;
       div.addEventListener('click', () => openPhotoModal(galleryImages, i));
       grid.appendChild(div);
     });
