@@ -342,7 +342,9 @@ a {
 
 .photo-modal__img {
   max-width: 100%;
-  max-height: 100%;
+  max-height: 90vh;   /* 추가 */
+  width: auto;        /* 추가 */
+  height: auto;       /* 추가 */
   object-fit: contain;
   transition: transform 0.3s ease;
 }
@@ -1308,7 +1310,8 @@ background:rgba(232,223,240,0.2);
 
   cursor:pointer;
 
-  transition:all .25s ease;
+  transition:all .15s ease;
+  box-shadow:0 8px 20px rgba(0,0,0,0.1);
 }
 
 .share-card:hover{
@@ -1318,14 +1321,6 @@ background:rgba(232,223,240,0.2);
 .share-icon{
   font-size:26px;
   margin-bottom:6px;
-}
-
-.share-card{
-
- transition:all .15s ease;
-
- box-shadow:0 8px 20px rgba(0,0,0,0.1);
-
 }
 
 .share-card:active{
