@@ -345,6 +345,8 @@ a {
   max-height: 100%;
   object-fit: contain;
   transition: transform 0.3s ease;
+}
+
    /* 갤러리 슬라이드 애니메이션 */
 
 @keyframes slideRight{
@@ -367,7 +369,6 @@ a {
     transform: translateX(0);
     opacity:1;
   }
-}
 }
 
 .photo-modal__counter {
@@ -622,6 +623,7 @@ a {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
+  white-space: nowrap;
 }
 
 .greeting__parents .parent-dot {
@@ -1179,13 +1181,13 @@ background:rgba(232,223,240,0.2);
    ═══════════════════════════════════════════ */
 @media (min-width: 768px) {
   .section__inner {
-    max-width: 720px;
+    max-width: 640px;
     padding: 0 var(--spacing-lg);
   }
 
   .hero__names {
     font-size: 2.5rem;
-    letter-spacing: 12px;
+    letter-spacing: 10px;
   }
 
   .hero__label {
