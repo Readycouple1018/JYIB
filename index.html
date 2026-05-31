@@ -130,12 +130,26 @@
 
     <!-- ─── Our Story Section ─── -->
     <section class="section story" id="story">
-      <div class="section__inner">
-        <h2 class="section__title animate-item" data-animate="fade-up" id="storyTitle"></h2>
-        <p class="story__text animate-item" data-animate="fade-up" id="storyContent"></p>
-        <div class="story__photos" id="storyPhotos"></div>
-      </div>
-    </section>
+  <div class="section__inner">
+    <h2 class="section__title animate-item" data-animate="fade-up" id="storyTitle"></h2>
+    <p class="story__text animate-item" data-animate="fade-up" id="storyContent"></p>
+
+    <div class="story__photos" id="storyPhotos"></div>
+
+    <!-- 식전영상 -->
+    <div class="story-video animate-item" data-animate="fade-up">
+      <video
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="auto">
+        <source src="images/story/prewedding.mp4" type="video/mp4">
+      </video>
+    </div>
+
+  </div>
+</section>
 
     <!-- ─── Gallery Section ─── -->
     <section class="section gallery" id="gallery">
