@@ -1338,3 +1338,14 @@ background:rgba(232,223,240,0.2);
 .share-card.sms{
   background:#e7e7e7;
 }
+
+.story-video {
+  margin-top: 30px;
+}
+
+.story-video video {
+  width: 100%;
+  display: block;
+  border-radius: 16px;
+}
+
