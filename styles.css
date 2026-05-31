@@ -1341,11 +1341,13 @@ background:rgba(232,223,240,0.2);
 
 .story-video {
   margin-top: 30px;
-}
-
-.story-video video {
-  width: 100%;
-  display: block;
+  overflow: hidden;
   border-radius: 16px;
 }
 
+.story-video iframe {
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  border: 0;
+  display: block;
+}
