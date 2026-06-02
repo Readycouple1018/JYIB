@@ -1345,9 +1345,8 @@ background:rgba(232,223,240,0.2);
   border-radius: 16px;
 }
 
-.story-video iframe {
+.story-video video {
   width: 100%;
-  aspect-ratio: 16 / 9;
-  border: 0;
   display: block;
+  border-radius: 16px;
 }
