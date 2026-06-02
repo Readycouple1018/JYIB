@@ -1340,13 +1340,13 @@ background:rgba(232,223,240,0.2);
 }
 
 .story-video {
-  margin-top: 30px;
-  overflow: hidden;
-  border-radius: 16px;
+  margin-top: 40px;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
 }
 
 .story-video video {
   width: 100%;
   display: block;
-  border-radius: 16px;
+  object-fit: cover;
 }
