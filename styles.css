@@ -1340,19 +1340,8 @@ background:rgba(232,223,240,0.2);
   background:#e7e7e7;
 }
 
-.story-video {
-  margin-top: 30px;
-}
+@media (max-width: 1023px) {
 
-.story-video video {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 16px;
-}
-
-/* 모바일에서만 전체폭 */
-@media (max-width: 768px) {
   .story-video {
     width: 100vw;
     margin-left: calc(50% - 50vw);
@@ -1361,8 +1350,6 @@ background:rgba(232,223,240,0.2);
   .story-video video {
     border-radius: 0;
   }
-
-   @media (max-width: 768px) {
 
   .location__map {
     width: 100vw;
