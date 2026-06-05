@@ -1341,10 +1341,10 @@ background:rgba(232,223,240,0.2);
 }
 
 /* ===================================================
-   [최종 해결] 식전영상 & 약도 레이아웃 최적화
+   [최종 완성] 식전영상 & 약도 레이아웃 및 모바일 터치 최적화
 =================================================== */
 
-/* ─── 1. PC 화면 기준 (기본 설정) ─── */
+/* ─── 1. PC 및 기본 화면 기준 ─── */
 /* 영상 컨테이너 */
 .story-video {
   margin-top: 30px;
@@ -1353,7 +1353,7 @@ background:rgba(232,223,240,0.2);
   overflow: hidden;
   border-radius: 16px;
 }
-/* 영상 자체: 원본 가로 비율(16:9) 절대 유지 */
+/* 영상 자체: 원본 가로 비율 절대 유지 */
 .story-video video {
   width: 100% !important;
   height: auto !important;
@@ -1380,7 +1380,7 @@ background:rgba(232,223,240,0.2);
 /* ─── 2. 📱 모바일 화면 전용 (화면 폭 768px 이하) ─── */
 @media (max-width: 768px) {
   
-  /* 영상 모바일 가로 가득 채우기 & 가운데 정렬 */
+  /* [영상] 모바일 가로 가득 채우기 & 가운데 정렬 */
   .story-video {
     width: 100vw !important;
     max-width: 100vw !important;
@@ -1389,18 +1389,34 @@ background:rgba(232,223,240,0.2);
     border-radius: 0 !important;
   }
   
-  /* 약도 모바일 가로 가득 채우기 & 가운데 정렬 */
+  /* [약도] 모바일 가로 가득 채우기 & 터치/선택 효과 완벽 차단 */
   .location__map {
     width: 100vw !important;
     max-width: 100vw !important;
     margin-left: calc(50% - 50vw) !important;
     margin-right: calc(50% - 50vw) !important;
     border-radius: 0 !important;
+    
+    /* 터치했을 때 생기는 브라우저 자체 하이라이트 배경색 제거 */
+    -webkit-tap-highlight-color: transparent !important; 
+    
+    /* 마우스나 터치 이벤트 완전 차단 (모달창 방지) */
+    pointer-events: none !important; 
+    
+    /* 꾹 눌렀을 때 텍스트나 이미지가 선택되는 현상 방지 */
+    -webkit-user-select: none !important;
+    user-select: none !important;
   }
 
+  /* 약도 이미지 자체 설정 */
   .location__map-img {
     width: 100% !important;
     height: auto !important;
     border-radius: 0 !important;
+    
+    /* 모바일에서 이미지를 길게 누르면 뜨는 '이미지 저장/복사' 팝업창 방지 */
+    -webkit-touch-callout: none !important; 
+    /* 이미지 드래그 막기 */
+    -webkit-user-drag: none !important; 
   }
 }
