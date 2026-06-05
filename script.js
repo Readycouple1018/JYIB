@@ -605,7 +605,15 @@ function modalNavigate(direction){
     $('#locationMapImg').src = 'images/location/1.jpg';
     
     $('#locationMapImg').addEventListener('click', () => {
+
+  // 모바일에서는 확대 안 함
+  if (window.innerWidth <= 1023) {
+    return;
+  }
+
+  // PC에서만 확대
   openPhotoModal(['images/location/1.jpg'], 0);
+
 });
     $('#kakaoMapBtn').href = w.mapLinks.kakao || '#';
     $('#naverMapBtn').href = w.mapLinks.naver || '#';
