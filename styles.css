@@ -891,6 +891,7 @@ a {
   width: 100%;
   height: auto;
   display: block;
+  cursor: zoom-in;
 }
 
 .location__links {
