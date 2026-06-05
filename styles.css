@@ -889,8 +889,8 @@ a {
 
 .location__map-img {
   width: 100%;
-  aspect-ratio: 16 / 10;
-  object-fit: cover;
+  height: auto;
+  display: block;
 }
 
 .location__links {
