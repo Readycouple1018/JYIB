@@ -1343,9 +1343,9 @@ background:rgba(232,223,240,0.2);
 @media (max-width: 1023px) {
 
   .story-video {
-    width: 100vw;
-    margin-left: calc(50% - 50vw);
-  }
+  width: 100%;
+  margin-left: 0;
+}
 
   .story-video video {
     border-radius: 0;
