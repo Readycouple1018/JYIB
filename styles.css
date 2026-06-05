@@ -1340,13 +1340,24 @@ background:rgba(232,223,240,0.2);
 }
 
 .story-video {
-  margin-top: 40px;
-  width: 100vw;
-  margin-left: calc(50% - 50vw);
+  margin-top: 30px;
 }
 
 .story-video video {
   width: 100%;
+  height: auto;
   display: block;
-  object-fit: cover;
+  border-radius: 16px;
+}
+
+/* 모바일에서만 전체폭 */
+@media (max-width: 768px) {
+  .story-video {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+  }
+
+  .story-video video {
+    border-radius: 0;
+  }
 }
