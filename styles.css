@@ -1340,28 +1340,27 @@ background:rgba(232,223,240,0.2);
   background:#e7e7e7;
 }
 
-@media (max-width: 1023px) {
+/* ─── 우리의 이야기 식전영상 (가로형 MP4 최적화) ─── */
+.story-video {
+  margin-top: 30px;
+  width: 100%;        /* 부모 안에서 가득 차게 설정 */
+  max-width: 100%;
+  overflow: hidden;
+  border-radius: 16px; /* PC에서는 부드러운 모서리 유지 */
+}
 
+.story-video video {
+  width: 100%;
+  height: auto;        /* 원본 가로 비율(16:9)을 강제로 유지 */
+  display: block;
+  object-fit: contain; /* 영상이 절대 찌그러지거나 잘리지 않도록 방지 */
+}
+
+/* 📱 모바일 화면 (화면 폭 768px 이하일 때만 적용) */
+@media (max-width: 768px) {
   .story-video {
     width: 100vw;
-    margin-left: calc(50% - 50vw);
+    margin-left: calc(50% - 50vw); /* 모바일 좌우 여백 없이 가득 채우기 */
+    border-radius: 0;             /* 모바일 꽉 찬 화면에서는 모서리 각지게 */
   }
-
-
-  .story-video video {
-    border-radius: 0;
-  }
-
-  .location__map {
-    width: 100vw;
-    margin-left: calc(50% - 50vw);
-    border-radius: 0;
-  }
-
-  .location__map-img {
-    width: 100%;
-    display: block;
-    border-radius: 0;
-  }
-
 }
