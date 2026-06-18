@@ -827,3 +827,25 @@ if (smsBtn) {
 
   };
 }
+
+// script.js 파일 맨 아래에 그냥 이어서 붙여넣기
+
+function handleWeddingVideoClick() {
+  const video = document.getElementById('wedding-video');
+  const overlay = document.getElementById('video-play-overlay');
+  
+  if (!video || !overlay) return;
+
+  if (video.paused) {
+    video.play().then(() => {
+      overlay.style.opacity = '0';
+      setTimeout(() => {
+        if (!video.paused) overlay.style.visibility = 'hidden';
+      }, 300);
+    }).catch(err => console.log(err));
+  } else {
+    video.pause();
+    overlay.style.visibility = 'visible';
+    overlay.style.opacity = '1';
+  }
+}
