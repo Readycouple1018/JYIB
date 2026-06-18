@@ -1417,4 +1417,58 @@ background:rgba(232,223,240,0.2);
     -webkit-touch-callout: none !important; 
     -webkit-user-drag: none !important; 
   }
+
+   /* ===================================================
+   [추가] 식전영상 커스텀 재생 버튼 스타일
+=================================================== */
+
+/* 비디오와 재생 버튼을 감싸는 wrapper */
+.custom-video-wrapper {
+  position: relative;
+  display: block;
+  width: 100%;
+  cursor: pointer;
+}
+
+/* 영상 위를 덮는 투명 음영 레이어 */
+.custom-play-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.15); /* 썸네일 분위기를 차분하게 만드는 옅은 음영 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 10;
+}
+
+/* 원형 재생 버튼 배경 */
+.custom-play-icon {
+  width: 56px;
+  height: 56px;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 50%;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: transform 0.2s ease;
+}
+
+/* 원형 안의 삼각형(▶) 아이콘 */
+.custom-play-icon::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 54%; /* 삼각형 우측 치우침 방지 중앙 정렬 마진 */
+  transform: translate(-50%, -50%);
+  border-style: solid;
+  border-width: 10px 0 10px 16px;
+  border-color: transparent transparent transparent #333;
+}
+
+.custom-video-wrapper:hover .custom-play-icon {
+  transform: scale(1.05); /* PC에서 마우스 올렸을 때 살짝 커지는 효과 */
+}
 }
