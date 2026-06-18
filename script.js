@@ -828,24 +828,24 @@ if (smsBtn) {
   };
 }
 
-// script.js 파일 맨 아래에 그냥 이어서 붙여넣기
-
-function handleWeddingVideoClick() {
+/**
+ * HTML의 onclick="toggleMute()"와 완벽하게 연결되는 비디오 재생/정지 함수입니다.
+ * 가림막 없이 비디오 자체를 컨트롤합니다.
+ */
+function toggleMute() {
   const video = document.getElementById('wedding-video');
-  const overlay = document.getElementById('video-play-overlay');
-  
-  if (!video || !overlay) return;
+  if (!video) return;
+
+  // 모바일 브라우저 재생 차단을 막기 위해 기본 음소거 상태 유지
+  video.muted = true;
 
   if (video.paused) {
-    video.play().then(() => {
-      overlay.style.opacity = '0';
-      setTimeout(() => {
-        if (!video.paused) overlay.style.visibility = 'hidden';
-      }, 300);
-    }).catch(err => console.log(err));
+    // 멈춰있을 때 누르면 재생
+    video.play().catch(err => {
+      console.log("재생 오류 방지용 가드:", err);
+    });
   } else {
+    // 재생 중일 때 누르면 일시정지
     video.pause();
-    overlay.style.visibility = 'visible';
-    overlay.style.opacity = '1';
   }
 }
