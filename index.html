@@ -139,13 +139,16 @@
     <div class="story-video animate-item" data-animate="fade-up">
 
 <video
-  autoplay
+  id="wedding-video"
   muted
   loop
   playsinline
   preload="auto"
   poster="images/story/video_cover.jpg"
-  oncontextmenu="return false;"> <source src="images/story/sample.mp4" type="video/mp4">
+  oncontextmenu="return false;"
+  onclick="toggleMute()" style="width: 100%; display: block; cursor: pointer;">
+
+  <source src="images/story/sample.mp4" type="video/mp4">
 </video>
 
 </div>
