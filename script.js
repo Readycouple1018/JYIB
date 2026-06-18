@@ -827,25 +827,3 @@ if (smsBtn) {
 
   };
 }
-
-/**
- * HTML의 onclick="toggleMute()"와 완벽하게 연결되는 비디오 재생/정지 함수입니다.
- * 가림막 없이 비디오 자체를 컨트롤합니다.
- */
-function toggleMute() {
-  const video = document.getElementById('wedding-video');
-  if (!video) return;
-
-  // 모바일 브라우저 재생 차단을 막기 위해 기본 음소거 상태 유지
-  video.muted = true;
-
-  if (video.paused) {
-    // 멈춰있을 때 누르면 재생
-    video.play().catch(err => {
-      console.log("재생 오류 방지용 가드:", err);
-    });
-  } else {
-    // 재생 중일 때 누르면 일시정지
-    video.pause();
-  }
-}
