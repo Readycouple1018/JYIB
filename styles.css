@@ -452,12 +452,12 @@ a {
   position: absolute;
   inset: 0;
 
-  background: linear-gradient(
+background: linear-gradient(
     to bottom,
-    rgba(0,0,0,0.25) 0%,
-    rgba(243,242,239,0) 70%,
-    rgba(243,242,239,0.7) 80%,
-    rgba(243,242,239,0.95) 100%
+    rgba(0, 0, 0, 0.30) 0%,           /* 상단은 글씨가 잘 보이도록 그림자 확보 */
+    rgba(249, 248, 249, 0) 65%,       /* 중간은 사진 본연의 색감이 맑게 보이도록 투명 처리 */
+    rgba(249, 248, 249, 0.7) 85%,     /* 하단으로 갈수록 자연스럽게 흐려짐 */
+    rgba(249, 248, 249, 1) 100%       /* 바닥은 배경색과 경계선 없이 100% 완벽 결합 */
   );
   z-index: 1;
 }
@@ -500,12 +500,9 @@ a {
   letter-spacing: 8px;
   margin-bottom: var(--spacing-md);
   line-height: 1.4;
-}
-
-.hero__names{
-  text-shadow:
-     0 3px 12px rgba(0,0,0,0.45);
-     font-weight:300;
+  font-weight: 300;
+  /* 밝은 배경 위에서도 텍스트가 묻히지 않게 아주 은은한 모브 음영만 부여 */
+  text-shadow: 0 1px 4px rgba(183, 181, 192, 0.2);
 }
 
 .hero__date,
@@ -518,7 +515,8 @@ a {
 .hero__divider {
   width: 40px;
   height: 1px;
-  background: rgba(255, 255, 255, 0.5);
+  /* 디바이더 선도 커튼의 모브 그레이 컬러로 통일 */
+  background: var(--color-accent);
   margin: 0 auto var(--spacing-md);
 }
 
