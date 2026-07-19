@@ -18,8 +18,10 @@
   --color-accent-light: #FFE4E1; /* 은은한 얼리 던 핑크 */
   --color-accent-dark: #8c8996;  /* 깊이감 있는 딥 모브 */
 
-  --color-border: #ece4f0;
-  --color-divider: #e0d8e6;
+  /* 테두리선도 커튼의 모브 그레이 톤을 연하게 녹여서 통일 */
+  --color-border: #e9e7eb;
+  --color-divider: #dad7dc;
+
 
   --color-overlay: rgba(74,74,74,0.55);
 
