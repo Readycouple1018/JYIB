@@ -13,9 +13,9 @@
   --color-text-light: #5f5f5f;
   --color-text-muted: #9e9e9e;
 
-  --color-accent: #E8C6C5;
-  --color-accent-light: #BC8F8F;
-  --color-accent-dark: #CCA3A2;
+  --color-accent: #b7b5c0;       /* 메인 그레이시 모브 */
+  --color-accent-light: #FFE4E1; /* 은은한 얼리 던 핑크 */
+  --color-accent-dark: #8c8996;  /* 깊이감 있는 딥 모브 */
 
   --color-border: #ece4f0;
   --color-divider: #e0d8e6;
