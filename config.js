@@ -36,9 +36,9 @@ const CONFIG = {
   },
 
 wedding: {
+
     date: "2026-10-18",
-    day: "일요일",
-    time: "오후 1시 50분",
+    time: "13:50",
     venue: "아이티컨벤션",
     hall: "그레이스홀",
     address: "경기도 용인시 기흥구 흥덕1로 13 (영덕동 1005) \n흥덕IT밸리 A동 (Tower) 2층",
@@ -46,7 +46,7 @@ wedding: {
     mapLinks: {
       kakao: "https://place.map.kakao.com/22839256",
       naver: "https://naver.me/5ssTABiI"
-    }
+    } 
   },
 
   // ── 인사말 ──
