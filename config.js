@@ -35,10 +35,10 @@ const CONFIG = {
     motherDeceased: false
   },
 
-  wedding: {
+wedding: {
     date: "2026-10-18",
-    day: "일요일", // 요일 데이터 추가 (화면 표시용)
-    time: "오후 1시 50분", // 13:50 대신 직관적인 표현으로 수정 가능
+    day: "일요일",
+    time: "오후 1시 50분",
     venue: "아이티컨벤션",
     hall: "그레이스홀",
     address: "경기도 용인시 기흥구 흥덕1로 13 (영덕동 1005) \n흥덕IT밸리 A동 (Tower) 2층",
@@ -47,7 +47,7 @@ const CONFIG = {
       kakao: "https://place.map.kakao.com/22839256",
       naver: "https://naver.me/5ssTABiI"
     }
-  }
+  },
 
   // ── 인사말 ──
   greeting: {
