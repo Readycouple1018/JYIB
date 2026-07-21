@@ -1419,16 +1419,71 @@ background:rgba(232,223,240,0.2);
     -webkit-user-drag: none !important; 
   }
 
-   /* 이미지와 비디오 우클릭 및 모바일 길게 누르기(드래그) 방지 */
- img, video {
-  -webkit-touch-callout: none; /* iOS Safari에서 길게 누를 때 나오는 메뉴 차단 */
-  -webkit-user-select: none;   /* Safari */
-  -khtml-user-select: none;
-  -moz-user-select: none;      /* Firefox */
-  -ms-user-select: none;       /* IE/Edge */
-  user-select: none;          /* 텍스트 및 이미지 선택 방지 */
-  -webkit-user-drag: none;     /* 이미지 드래그 방지 */
-  pointer-events: auto;        /* 기본 클릭 이벤트 유지 */
- }
+/* ===================================================
+   [보안 강화] 모바일 이미지/동영상 저장 차단 & 오버레이
+=================================================== */
+
+/* 1. 이미지 및 비디오 기본 선택, 드래그, 긴 누르기 팝업 완벽 차단 */
+img, video {
+  -webkit-touch-callout: none !important; /* iOS Safari 길게 누르기 메뉴 차단 */
+  -webkit-user-select: none !important;   /* Safari */
+  -khtml-user-select: none !important;
+  -moz-user-select: none !important;      /* Firefox */
+  -ms-user-select: none !important;       /* IE/Edge */
+  user-select: none !important;          /* 선택 방지 */
+  -webkit-user-drag: none !important;     /* 드래그 방지 */
+}
+
+/* 2. Hero(메인) 이미지 위에 투명 보호막(Overlay) 덮기 */
+.hero {
+  position: relative;
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: transparent;
+  z-index: 10;
+  pointer-events: auto;
+}
+
+/* 3. Story 사진 영역 위에 투명 보호막 덮기 */
+.story__photo-item {
+  position: relative;
+}
+.story__photo-item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: transparent;
+  z-index: 10;
+  pointer-events: auto;
+}
+
+/* 4. Gallery 갤러리 이미지 항목 위에 투명 보호막 덮기 */
+.gallery__item {
+  position: relative;
+}
+.gallery__item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: transparent;
+  z-index: 2;
+  pointer-events: auto;
+}
+
+/* 5. 갤러리 클릭 시 모달(팝업) 이미지 위에 투명 보호막 덮기 */
+.photo-modal__container {
+  position: relative;
+}
+.photo-modal__container::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: transparent;
+  z-index: 10;
+  pointer-events: auto;
+}
    
 }
