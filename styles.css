@@ -1418,4 +1418,17 @@ background:rgba(232,223,240,0.2);
     -webkit-touch-callout: none !important; 
     -webkit-user-drag: none !important; 
   }
+
+   /* 이미지와 비디오 우클릭 및 모바일 길게 누르기(드래그) 방지 */
+ img, video {
+  -webkit-touch-callout: none; /* iOS Safari에서 길게 누를 때 나오는 메뉴 차단 */
+  -webkit-user-select: none;   /* Safari */
+  -khtml-user-select: none;
+  -moz-user-select: none;      /* Firefox */
+  -ms-user-select: none;       /* IE/Edge */
+  user-select: none;          /* 텍스트 및 이미지 선택 방지 */
+  -webkit-user-drag: none;     /* 이미지 드래그 방지 */
+  pointer-events: auto;        /* 기본 클릭 이벤트 유지 */
+ }
+   
 }
