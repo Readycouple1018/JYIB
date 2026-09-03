@@ -402,12 +402,6 @@ a {
   text-align: center;
 }
 
-@media (min-width: 768px) {
-  .section__inner {
-    max-width: 640px;
-  }
-}
-
 .section__title {
   font-family: var(--font-serif);
   font-size: 1.25rem;
@@ -766,6 +760,24 @@ a {
   transform: scale(1.03);
 }
 
+/* ─── 식전영상 ─── */
+.story-video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  margin-top: 25px;
+  margin-bottom: 35px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: #000;
+}
+
+.story-video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 /* ═══════════════════════════════════════════
    Gallery Section
    ═══════════════════════════════════════════ */
@@ -872,8 +884,10 @@ a {
 }
 
 .location__map {
+  margin-top: 20px;
   margin-bottom: var(--spacing-lg);
-  border-radius: var(--radius-md);
+  width: 100%;
+  border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
 }
@@ -1164,101 +1178,8 @@ a {
 }
 
 /* ═══════════════════════════════════════════
-   Responsive - Tablet (768px+)
-   ═══════════════════════════════════════════ */
-@media (min-width: 768px) {
-  .section__inner {
-    max-width: 640px;
-    padding: 0 var(--spacing-lg);
-  }
-
-  .hero__names {
-    font-size: 2.5rem;
-    letter-spacing: 10px;
-  }
-
-  .hero__label {
-    font-size: 0.9375rem;
-    letter-spacing: 8px;
-  }
-
-  .countdown__number {
-    font-size: 2.5rem;
-  }
-
-  .countdown__item {
-    min-width: 4.5rem;
-  }
-
-  .gallery__grid {
-    gap: 4px;
-  }
-
-  .story__photos {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--spacing-md);
-  }
-
-  .story__photo-item img {
-    aspect-ratio: 3 / 2;
-  }
-
-  .section__title {
-    font-size: 1.375rem;
-  }
-}
-
-/* ═══════════════════════════════════════════
-   Responsive - Desktop (1024px+)
-   ═══════════════════════════════════════════ */
-@media (min-width: 1024px) {
-  .main-content {
-    max-width: 480px;
-    margin: 0 auto;
-    box-shadow: 0 0 60px rgba(0, 0, 0, 0.08);
-    min-height: 100vh;
-  }
-
-  .hero {
-    min-height: 100vh;
-  }
-
-  .section__inner {
-    max-width: 440px;
-  }
-
-  .photo-modal__container {
-    padding: 4rem;
-  }
-}
-
-/* ═══════════════════════════════════════════
-   Print (hide interactive elements)
-   ═══════════════════════════════════════════ */
-@media print {
-  .curtain,
-  .petal-canvas,
-  .photo-modal,
-  .toast,
-  .countdown,
-  .calendar-actions,
-  .location__links,
-  .location__copy,
-  .account-item__copy {
-    display: none !important;
-  }
-
-  .animate-item {
-    opacity: 1 !important;
-    transform: none !important;
-  }
-}
-
-/* =========================
    Share Panel UI
-========================= */
-
+   ═══════════════════════════════════════════ */
 .share-grid,
 .share__grid {
   display: flex;
@@ -1297,7 +1218,6 @@ a {
   margin-bottom: 6px;
 }
 
-/* 공유 카드가 배경색 */
 .share-card.link {
   background: #f3f3f3;
 }
@@ -1306,107 +1226,9 @@ a {
   background: #e7e7e7;
 }
 
-/* ===================================================
-   [최종 완성] PC/모바일 반응형 레이아웃 & 이미지 보호
-=================================================== */
-
-/* ─── 1. PC 및 기본 화면 (모바일 카드 레이아웃 중앙 고정) ─── */
-.main-content {
-  max-width: 480px !important;
-  margin: 0 auto !important;
-  box-shadow: 0 0 60px rgba(0, 0, 0, 0.08) !important;
-  background-color: var(--color-bg) !important;
-}
-
-.story-video {
-  width: 100% !important;
-  max-width: 100% !important;
-  height: auto !important;
-  aspect-ratio: 16 / 9 !important;
-  margin-top: 30px !important;
-  margin-bottom: 30px !important;
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-  border-radius: 16px !important;
-  overflow: hidden !important;
-}
-
-.story-video video {
-  width: 100% !important;
-  height: 100% !important;
-  aspect-ratio: 16 / 9 !important;
-  object-fit: cover !important;
-  border-radius: 16px !important;
-  display: block !important;
-}
-
-.location__map {
-  margin-top: 20px;
-  width: 100%;
-  max-width: 100%;
-  overflow: hidden;
-  border-radius: 16px;
-}
-
-.location__map-img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* ─── 2. 모바일 화면 전용 (768px 이하) ─── */
-@media (max-width: 768px) {
-  
-  .story__text, .greeting__text {
-    font-size: 0.9375rem !important;
-    line-height: 1.8 !important; 
-  }
-
-  .story-video {
-    width: 100vw !important;
-    max-width: 100vw !important;
-    height: auto !important;
-    aspect-ratio: 16 / 9 !important;
-    margin-top: 25px !important;
-    margin-bottom: 35px !important;
-    margin-left: calc(50% - 50vw) !important;
-    margin-right: calc(50% - 50vw) !important;
-    border-radius: 0 !important;
-    overflow: hidden !important;
-  }
-
-  .story-video video {
-    width: 100% !important;
-    height: 100% !important;
-    aspect-ratio: 16 / 9 !important;
-    object-fit: cover !important;
-    border-radius: 0 !important;
-    display: block !important;
-  }
-  
-  .location__map {
-    width: 100vw !important;
-    max-width: 100vw !important;
-    margin-left: calc(50% - 50vw) !important;
-    margin-right: calc(50% - 50vw) !important;
-    border-radius: 0 !important;
-    -webkit-tap-highlight-color: transparent !important; 
-    pointer-events: none !important; 
-    -webkit-user-select: none !important;
-    user-select: none !important;
-  }
-
-  .location__map-img {
-    width: 100% !important;
-    height: auto !important;
-    border-radius: 0 !important;
-    -webkit-touch-callout: none !important; 
-    -webkit-user-drag: none !important; 
-  }
-
-}
-
-/* ─── 3. 이미지/동영상 저장 차단 & 오버레이 ─── */
+/* ═══════════════════════════════════════════
+   [보안] 이미지/동영상 저장 차단 & 오버레이
+   ═══════════════════════════════════════════ */
 img, video {
   -webkit-touch-callout: none !important;
   -webkit-user-select: none !important;
@@ -1463,4 +1285,139 @@ img, video {
   background: transparent;
   z-index: 10;
   pointer-events: auto;
+}
+
+/* ═══════════════════════════════════════════
+   Responsive - Tablet (768px 이하 모바일 전용)
+   ═══════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .story__text, .greeting__text {
+    font-size: 0.9375rem !important;
+    line-height: 1.8 !important; 
+  }
+
+  /* 모바일에서만 꽉 찬 100vw 레이아웃 적용 */
+  .story-video {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    margin-left: calc(50% - 50vw) !important;
+    margin-right: calc(50% - 50vw) !important;
+    border-radius: 0 !important;
+  }
+
+  .story-video video {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 16 / 9 !important;
+    object-fit: contain !important;
+  }
+  
+  .location__map {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    margin-left: calc(50% - 50vw) !important;
+    margin-right: calc(50% - 50vw) !important;
+    border-radius: 0 !important;
+    -webkit-tap-highlight-color: transparent !important; 
+    pointer-events: none !important; 
+    -webkit-user-select: none !important;
+    user-select: none !important;
+  }
+
+  .location__map-img {
+    width: 100% !important;
+    height: auto !important;
+    border-radius: 0 !important;
+    -webkit-touch-callout: none !important; 
+    -webkit-user-drag: none !important; 
+  }
+}
+
+@media (min-width: 768px) {
+  .section__inner {
+    max-width: 640px;
+    padding: 0 var(--spacing-lg);
+  }
+
+  .hero__names {
+    font-size: 2.5rem;
+    letter-spacing: 10px;
+  }
+
+  .hero__label {
+    font-size: 0.9375rem;
+    letter-spacing: 8px;
+  }
+
+  .countdown__number {
+    font-size: 2.5rem;
+  }
+
+  .countdown__item {
+    min-width: 4.5rem;
+  }
+
+  .gallery__grid {
+    gap: 4px;
+  }
+
+  .story__photos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-md);
+  }
+
+  .story__photo-item img {
+    aspect-ratio: 3 / 2;
+  }
+
+  .section__title {
+    font-size: 1.375rem;
+  }
+}
+
+/* ═══════════════════════════════════════════
+   Responsive - Desktop (1024px 이상 PC 전용)
+   ═══════════════════════════════════════════ */
+@media (min-width: 1024px) {
+  .main-content {
+    max-width: 480px;
+    margin: 0 auto;
+    box-shadow: 0 0 60px rgba(0, 0, 0, 0.08);
+    min-height: 100vh;
+  }
+
+  .hero {
+    min-height: 100vh;
+  }
+
+  .section__inner {
+    max-width: 440px;
+  }
+
+  .photo-modal__container {
+    padding: 4rem;
+  }
+}
+
+/* ═══════════════════════════════════════════
+   Print
+   ═══════════════════════════════════════════ */
+@media print {
+  .curtain,
+  .petal-canvas,
+  .photo-modal,
+  .toast,
+  .countdown,
+  .calendar-actions,
+  .location__links,
+  .location__copy,
+  .account-item__copy {
+    display: none !important;
+  }
+
+  .animate-item {
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }
