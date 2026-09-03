@@ -1288,7 +1288,7 @@ img, video {
 }
 
 /* ═══════════════════════════════════════════
-   Responsive - Tablet (768px 이하 모바일 전용)
+   Responsive - Mobile (768px 이하 모바일 전용)
    ═══════════════════════════════════════════ */
 @media (max-width: 768px) {
   .story__text, .greeting__text {
@@ -1296,28 +1296,28 @@ img, video {
     line-height: 1.8 !important; 
   }
 
-  /* 모바일에서만 꽉 찬 100vw 레이아웃 적용 */
+  /* 모바일 여백 방지 및 너비 최적화 */
   .story-video {
-    width: 100vw !important;
-    max-width: 100vw !important;
-    margin-left: calc(50% - 50vw) !important;
-    margin-right: calc(50% - 50vw) !important;
-    border-radius: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    border-radius: var(--radius-md) !important;
   }
 
   .story-video video {
     width: 100% !important;
     height: auto !important;
     aspect-ratio: 16 / 9 !important;
-    object-fit: contain !important;
+    object-fit: cover !important;
   }
   
   .location__map {
-    width: 100vw !important;
-    max-width: 100vw !important;
-    margin-left: calc(50% - 50vw) !important;
-    margin-right: calc(50% - 50vw) !important;
-    border-radius: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    border-radius: 16px !important;
     -webkit-tap-highlight-color: transparent !important; 
     pointer-events: none !important; 
     -webkit-user-select: none !important;
@@ -1327,7 +1327,6 @@ img, video {
   .location__map-img {
     width: 100% !important;
     height: auto !important;
-    border-radius: 0 !important;
     -webkit-touch-callout: none !important; 
     -webkit-user-drag: none !important; 
   }
