@@ -1397,6 +1397,14 @@ background:rgba(232,223,240,0.2);
     margin-right: calc(50% - 50vw) !important;
     border-radius: 0 !important;
   }
+
+   /* 영상 비율 및 fit 속성 적용 */
+  .story-video video {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 16 / 9 !important;
+    object-fit: contain !important;
+  }
   
   /* [약도] 모바일 가로 가득 채우기 & 터치/선택 효과 완벽 차단 (원래 코드 그대로!) */
   .location__map {
